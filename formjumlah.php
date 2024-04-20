@@ -16,12 +16,12 @@ $minstock = new Pesanan;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/formjumlah.css">
+    <link rel="stylesheet" href="formjumlah.css">
 </head>
 <body>
         <div class="form">
       <div class="title">Terimakasih</div>
-      <div class="subtitle">Masukan Jumlah Belanja</div>
+      <div class="subtitle">Jumlah Belanja</div>
         <form action="buyLogic.php" method="POST">
              <input type="hidden" name="id_produk" value="<?= $id_produk?>">
       <input type="hidden" name="tanggal_transaksi" value="<?php echo date("Y-m-d"); ?>">
