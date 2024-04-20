@@ -21,102 +21,68 @@ $id_transaksi = $id_transaksis["MAX(id_transaksi)"];
 $detailTransaksi = $logic->viewTransaksi($id_transaksi);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .invoice {
-            width: 80%;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .invoice-header,
-        .invoice-body {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .invoice-header {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .invoice-body {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .invoice-body .left {
-            flex: 1;
-        }
-
-        .invoice-body .right {
-            flex: 1;
-            text-align: right;
-        }
-
-        .invoice-item {
-            margin-bottom: 10px;
-        }
-
-        .invoice-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .invoice-item .description {
-            font-weight: bold;
-        }
-
-        .invoice-total {
-            margin-top: 20px;
-            text-align: right;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/invoice.css">
 </head>
 <body>
-    <div class="invoice">
-        <div class="invoice-header">
-            Invoice
-        </div>
-        <div class="invoice-body">
-            <div class="left">
-                <div class="invoice-item">
-                    <div class="description">ID Transaksi :</div>
-                    <div><?= $detailTransaksi["id_transaksi"]?></div>
+    <div class="container mt-6 mb-7">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 col-xl-7">
+        <div class="card">
+          <div class="card-body p-5">
+            <h2>
+              Hey Customer,
+            </h2>
+            <p class="fs-sm">
+              This is the receipt for a payment of shopping in my toko kelontong.
+            </p>
+
+            <div class="border-top border-gray-200 pt-4 mt-4">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="text-muted mb-2">Payment No.</div>
+                  <strong><?= $detailTransaksi["id_transaksi"]?></strong>
                 </div>
-                <div class="invoice-item">
-                    <div class="description">Nama Barang:</div>
-                    <div><?= $detailTransaksi["nama_produk"]?></div>
+                <div class="col-md-6 text-md-end">
+                  <div class="text-muted mb-2">Payment Date</div>
+                  <strong><?= $detailTransaksi["tanggal_transaksi"]?></strong>
                 </div>
-                <div class="invoice-item">
-                    <div class="description">Date:</div>
-                    <div><?= $detailTransaksi["tanggal_transaksi"]?></div>
-                </div>
+              </div>
             </div>
+
+
+            <table class="table border-bottom border-gray-200 mt-3">
+              <thead>
+                <tr>
+                  <th scope="col" class="fs-sm text-dark text-uppercase-bold-sm px-0">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="px-0"><?= $detailTransaksi["nama_produk"]?></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <a href="shop.php" class="btn btn-dark btn-lg card-footer-btn justify-content-center text-uppercase-bold-sm hover-lift-light">
+            <span class="svg-icon text-white me-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-g</title><path d="M336,208V113a80,80,0,0,0-160,0v95" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path><rect x="96" y="208" width="320" height="272" rx="48" ry="48" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></rect></svg>
+            </span>
+            Pay and Back
+          </a>
         </div>
+      </div>
     </div>
-    <!-- Link back to the homepage -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="shop.php">Back</a>
-    </div>
+  </div>
+
+
+
+<script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
